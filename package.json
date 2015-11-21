@@ -12,7 +12,7 @@
     "assert": "x"
   },
   "engines": {
-    "node": "5.x."
+    "node": "5.x"
   },
   "repository": {
     "type": "git",
