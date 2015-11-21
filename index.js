@@ -13,8 +13,9 @@ if (env === 'development') {
     url = 'mongodb://jburgess:admin@ds057254.mongolab.com:57254/heroku_3zthx5rr';
 }
 
-var insertDocument = function(db, params, callback) {
+var insertDocument = function(db, req, callback) {
     var record = {
+        ip: req.header('x-forwarded-for') || req.connection.remoteAddress,
         date: new Date()
     };
     console.log(record);
@@ -31,7 +32,7 @@ app.all('/', function(req, res, next) {
     console.log(req.params);
     MongoClient.connect(url, function(err, db) {
         assert.equal(null, err);
-        insertDocument(db, req.params, function() {
+        insertDocument(db, req, function() {
             db.close();
             console.log('Closing mongod connection');
             next();
