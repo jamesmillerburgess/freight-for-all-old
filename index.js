@@ -3,7 +3,14 @@ var MongoClient = require('mongodb').MongoClient;
 var assert = require('assert');
 var app = express();
 
-var url = 'mongodb://localhost:27017/test';
+var env = process.env.NODE_ENV = process.env.NODE_ENV || 'development';
+
+var url;
+if (env === 'development') {
+    url = 'mongodb://localhost:27017/test';
+} else {
+    url = 'mongodb://jburgess:Cdjuices1@ds057254.mongolab.com:57254/heroku_3zthx5rr';
+}
 
 var getDateTime = function() {
 
@@ -32,8 +39,7 @@ var getDateTime = function() {
 
 var insertDocument = function(db, params, callback) {
     var record = {
-        params: params,
-        time: getDateTime()
+        date: new Date()
     };
     console.log(record);
     db.collection('usage').insertOne(record, function(err, result) {
