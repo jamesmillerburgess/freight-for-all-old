@@ -5,13 +5,13 @@ var app = express();
 
 var env = process.env.NODE_ENV = process.env.NODE_ENV || 'development';
 
-var url = 'mongodb://jburgess:admin@ds057254.mongolab.com:57254/heroku_3zthx5rr';
-/*
+var url;
+
 if (env === 'development') {
     url = 'mongodb://localhost:27017/test';
 } else {
     url = 'mongodb://jburgess:Cdjuices1@ds057254.mongolab.com:57254/heroku_3zthx5rr';
-}             */
+}
 
 var getDateTime = function() {
 
