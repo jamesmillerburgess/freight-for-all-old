@@ -4,14 +4,16 @@
   "description": "A sample Node.js app using Express 4",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js"
+    "start": "node index.js",
+    "test": "vows test/main.js"
   },
   "dependencies": {
     "express": "4.13.3",
-    "mongoose": "4.x"
+    "mongoose": "4.x",
+    "vows": "0.8.1"
   },
   "engines": {
-    "node": "5.x"
+    "node": "4.1.x"
   },
   "repository": {
     "type": "git",
