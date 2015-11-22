@@ -1,47 +1,27 @@
 var express = require('express');
-var MongoClient = require('mongodb').MongoClient;
-var assert = require('assert');
 var app = express();
+var db = require('./server/db.js');
 
-var env = process.env.NODE_ENV = process.env.NODE_ENV || 'development';
-
-var url;
-
-if (env === 'development') {
-    url = 'mongodb://localhost:27017/test';
-} else {
-    url = 'mongodb://jburgess:admin@ds057254.mongolab.com:57254/heroku_3zthx5rr';
-}
-
-var insertDocument = function(db, req, callback) {
-    var record = {
-        ip: req.header('x-forwarded-for') || req.connection.remoteAddress,
-        date: new Date()
-    };
-    console.log(record);
-    db.collection('usage').insertOne(record, function(err, result) {
-        assert.equal(err, null);
-        console.log("Inserted a document into the usage collection.");
-        callback(result);
-    });
-};
-
+// Set environment variables
 app.set('port', (process.env.PORT || 5000));
+app.set('env', (process.env.NODE_ENV = process.env.NODE_ENV || 'development'));
 
+// Connect to database
+db.connect(app.get('env'));
+
+/***********************************
+    Routing
+ ***********************************/
+
+// 1) Log visit
 app.all('/', function(req, res, next) {
-    console.log(req.params);
-    MongoClient.connect(url, function(err, db) {
-        assert.equal(null, err);
-        insertDocument(db, req, function() {
-            db.close();
-            console.log('Closing mongod connection');
-            next();
-        });
-    });
+  db.logVisit(req.header('x-forwarded-for') || req.connection.remoteAddress, next());
 });
 
+// 2) Serve static content
 app.use('/', express.static('./views/pages'));
 
+// Start app
 app.listen(app.get('port'), function() {
   console.log('Node app is running on port', app.get('port'));
 });
