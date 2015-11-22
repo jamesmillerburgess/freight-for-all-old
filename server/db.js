@@ -5,15 +5,15 @@ var models = {
 };
 
 exports.connect = function(env, cb) {
-    if (env === 'development') {
-        mongoose.connect('mongodb://localhost:27017/test', cb);
-    } else {
-        mongoose.connect('mongodb://jburgess:admin@ds057254.mongolab.com:57254/heroku_3zthx5rr', cb);
-    }
+  if (env === 'development') {
+    mongoose.connect('mongodb://localhost:27017/test', cb);
+  } else {
+    mongoose.connect('mongodb://jburgess:admin@ds057254.mongolab.com:57254/heroku_3zthx5rr', cb);
+  }
 };
 
 exports.logVisit = function(ip, cb) {
-    console.log(ip);
-    var visit = new models.visit({ ip: ip });
-    visit.save(cb);
+  console.log(ip);
+  var visit = new models.visit({ ip: ip });
+  visit.save(cb);
 };
