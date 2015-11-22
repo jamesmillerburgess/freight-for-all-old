@@ -24,4 +24,4 @@ vows.describe('Division by Zero').addBatch({
       }
     }
   }
-}).run(); // Run it
+}).exportTo(module); // Run it
