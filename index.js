@@ -1,17 +1,17 @@
 var express = require('express');
-var app = express();
-var db = require('./server/db.js');
 
 // Set environment variables
+var app = express();
 app.set('port', (process.env.PORT || 5000));
 app.set('env', (process.env.NODE_ENV = process.env.NODE_ENV || 'development'));
 
 // Connect to database
+var db = require('./server/db.js');
 db.connect(app.get('env'));
 
-/***********************************
-    Routing
- ***********************************/
+/**
+ * Routing
+ **/
 
 // 1) Log visit
 app.all('/', function(req, res, next) {

@@ -1,5 +1,4 @@
 var mongoose = require('mongoose');
-
 var models = {
     visit: require('./schemas/visit.js').model
 };

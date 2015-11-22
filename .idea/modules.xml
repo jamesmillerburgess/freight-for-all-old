@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/../freight-for-all/.idea/node-js-getting-started.iml" filepath="$PROJECT_DIR$/../freight-for-all/.idea/node-js-getting-started.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/freight-for-all.iml" filepath="$PROJECT_DIR$/.idea/freight-for-all.iml" />
     </modules>
   </component>
 </project>
