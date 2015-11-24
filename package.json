@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "express": "4.13.3",
+    "express-session": "1.x",
     "mongoose": "4.x",
     "vows": "0.8.1"
   },
