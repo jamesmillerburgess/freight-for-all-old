@@ -14,7 +14,7 @@ db.connect(app.get('env'));
  **/
 
 // 1) Log visit
-app.all('/', function(req, res, next) {
+app.all('/*', function(req, res, next) {
   db.logVisit(req.header('x-forwarded-for') || req.connection.remoteAddress, next());
 });
 
