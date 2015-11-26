@@ -11,8 +11,10 @@ exports.connect = function(env, cb) {
   }
 };
 
-exports.logVisit = function(ip, cb) {
-  console.log(ip);
-  var visit = new models.visit({ ip: ip });
+exports.logVisit = function(ip, path, cb) {
+  var visit = new models.visit({
+    ip: ip,
+    path: path
+  });
   visit.save(cb);
 };
