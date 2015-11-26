@@ -24,16 +24,19 @@ app.use(session({
 
 // 1) Log visit
 app.all('/*', function(req, res, next) {
-  console.log(req.session.lastPage);
-  db.logVisit(req.header('x-forwarded-for') || req.connection.remoteAddress, req.session.path, next());
+  db.logVisit(req.header('x-forwarded-for') || req.connection.remoteAddress, req.session, next());
 });
 
 // 2) Update path
 app.all('/*', function(req, res, next) {
+  var pathNext = {
+    url: req.url,
+    date: Date.now()
+  };
   if(!req.session.path) {
     req.session.path = [];
   }
-  req.session.path.push(req.url);
+  req.session.path.push(pathNext);
   next();
 });
 

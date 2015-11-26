@@ -11,10 +11,21 @@ exports.connect = function(env, cb) {
   }
 };
 
-exports.logVisit = function(ip, path, cb) {
-  var visit = new models.visit({
-    ip: ip,
-    path: path
+exports.logVisit = function(ip, session, cb) {
+  var conditions = { id: session.id };
+  models.visit.findOne(conditions, function(err, doc) {
+    console.log('error: '+err);
+    if (!doc) {
+      var visit = new models.visit({
+        id: session.id,
+        ip: ip,
+        path: session.path
+      });
+      visit.save(cb);
+    } else {
+      console.log(doc);
+      doc.path = session.path;
+      doc.save(cb);
+    }
   });
-  visit.save(cb);
 };
