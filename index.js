@@ -24,7 +24,7 @@ app.use(session({
 
 // 1) Log visit
 app.all('/*', function(req, res, next) {
-  db.logVisit(req.header('x-forwarded-for') || req.connection.remoteAddress, req.session, next());
+  db.updateSession(req.header('x-forwarded-for') || req.connection.remoteAddress, req.session, next());
 });
 
 // 2) Update path
