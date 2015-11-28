@@ -1,6 +1,6 @@
 var mongoose = require('mongoose');
 
-var visitSchema = {
+var sessionSchema = {
   id: String,
   ip: String,
   path: [{
@@ -9,4 +9,4 @@ var visitSchema = {
   }]
 };
 
-exports.model = mongoose.model('visit', mongoose.Schema(visitSchema));
+exports.model = mongoose.model('session', mongoose.Schema(sessionSchema));

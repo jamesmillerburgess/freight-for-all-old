@@ -1,8 +1,12 @@
 var mongoose = require('mongoose');
+
+// Load models
 var models = {
-    visit: require('./schemas/visit.js').model
+    session: require('./schemas/session.js').model
 };
 
+// Connect based on database
+// TODO: Staging database
 exports.connect = function(env, cb) {
   if (env === 'development') {
     mongoose.connect('mongodb://localhost:27017/test', cb);
@@ -11,18 +15,26 @@ exports.connect = function(env, cb) {
   }
 };
 
-exports.logVisit = function(ip, session, cb) {
+/**
+ * updateSession
+ * @param ip
+ * @param session
+ * @param cb
+ */
+exports.updateSession = function(ip, session, cb) {
   var conditions = { id: session.id };
-  models.visit.findOne(conditions, function(err, doc) {
-    console.log('error: '+err);
+  models.session.findOne(conditions, function(err, doc) {
     if (!doc) {
-      var visit = new models.visit({
+      // Create a new document
+      var sessionUpdate = new models.session({
         id: session.id,
         ip: ip,
         path: session.path
       });
-      visit.save(cb);
+      sessionUpdate.save(cb);
     } else {
+
+      // Update the old one
       console.log(doc);
       doc.path = session.path;
       doc.save(cb);
