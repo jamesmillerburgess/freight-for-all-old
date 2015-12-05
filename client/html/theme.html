@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script src="../lib/jquery-2.1.4.min.js"></script>
+  <script src="../lib/bootstrap-3.3.6-dist/js/bootstrap.min.js"></script>
+
+  <link rel="stylesheet" href="../lib/bootstrap-3.3.6-dist/css/bootstrap.min.css"/>
+  <link rel="stylesheet" href="../css/theme.css"/>
+</head>
+<body>
+
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+              data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">Freight For All</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li>
+        <li><a href="#">Link</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+             aria-expanded="false">Dropdown <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Action</a></li>
+            <li><a href="#">Another action</a></li>
+            <li><a href="#">Something else here</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="#">Separated link</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="#">One more separated link</a></li>
+          </ul>
+        </li>
+      </ul>
+      <form class="navbar-form navbar-left" role="search">
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="Search">
+        </div>
+        <button type="submit" class="btn btn-default">Submit</button>
+      </form>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#">Link</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+             aria-expanded="false">Dropdown <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Action</a></li>
+            <li><a href="#">Another action</a></li>
+            <li><a href="#">Something else here</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="#">Separated link</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+
+<div class="container">
+
+  <div class="row">
+    <div class="col-md-3">
+
+      <h4>Body</h4>
+
+      <div class="row">
+        <div class="col-md-7">Background</div>
+        <div class="col-md-2"><input type="color" value="#ffffff" id="bodyBackground"></div>
+
+      </div>
+      <h4>Navbar</h4>
+
+      <div class="row">
+        <div class="col-md-7">Background</div>
+        <div class="col-md-2"><input type="color" value="#ffffff" id="navbarBackground"></div>
+      </div>
+      <div class="row">
+        <div class="col-md-7">Border</div>
+        <div class="col-md-2"><input type="color" value="#ffffff" id="navbarBorder"></div>
+      </div>
+
+
+      <h4>Panel</h4>
+
+      <div class="row">
+        <div class="col-md-7">Heading Background</div>
+        <div class="col-md-2"><input type="color" value="#ffffff" id="panelHeadingBackground"></div>
+      </div>
+      <div class="row">
+        <div class="col-md-7">Body Background</div>
+        <div class="col-md-2"><input type="color" value="#ffffff" id="panelBodyBackground"></div>
+      </div>
+      <div class="row">
+        <div class="col-md-7">Border</div>
+        <div class="col-md-2"><input type="color" value="#ffffff" id="panelBorder"></div>
+      </div>
+    </div>
+    <div class="col-md-9">
+
+      <div class="panel panel-default">
+        <div class="panel-heading">Inputs</div>
+        <div class="panel-body">
+          <div class="col-md-5">
+            <div class="row">
+              <div class="col-md-7">Input Background</div>
+              <div class="col-md-2"><input type="color" value="#ffffff" id="inputBackground"></div>
+            </div>
+            <div class="row">
+              <div class="col-md-7">Input Text Color</div>
+              <div class="col-md-2"><input type="color" value="#ffffff" id="inputTextColor"></div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-7">Addon Background</div>
+              <div class="col-md-2"><input type="color" value="#ffffff" id="addonBackground"></div>
+            </div>
+            <div class="row">
+              <div class="col-md-7">Icon Color</div>
+              <div class="col-md-2"><input type="color" value="#ffffff" id="iconColor"></div>
+            </div>
+          </div>
+          <div class="col-md-7">
+            <div class="row">
+
+
+              <div class="input-group">
+        <span class="input-group-addon" id="basic-addon1"><span class="glyphicon glyphicon-user"
+                                                                aria-hidden="true"></span></span>
+                <input type="text" class="form-control" placeholder="Shipper" aria-describedby="basic-addon1">
+              </div>
+
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="panel panel-default">
+        <div class="panel-heading">Buttons</div>
+        <div class="panel-body">
+          <div class="col-md-5">
+            <h4>Default Button</h4>
+            <div class="row">
+              <div class="col-md-7">Background</div>
+              <div class="col-md-2"><input type="color" value="#ffffff" id="defaultButtonBackground"></div>
+            </div>
+            <div class="row">
+              <div class="col-md-7">Text</div>
+              <div class="col-md-2"><input type="color" value="#ffffff" id="defaultButtonTextColor"></div>
+            </div>
+            <div class="row">
+              <div class="col-md-7">Border</div>
+              <div class="col-md-2"><input type="color" value="#ffffff" id="defaultButtonBorder"></div>
+            </div>
+            <h4>Primary Button</h4>
+            <div class="row">
+              <div class="col-md-7">Background</div>
+              <div class="col-md-2"><input type="color" value="#ffffff" id="primaryButtonBackground"></div>
+            </div>
+            <div class="row">
+              <div class="col-md-7">Text</div>
+              <div class="col-md-2"><input type="color" value="#ffffff" id="primaryButtonTextColor"></div>
+            </div>
+            <div class="row">
+              <div class="col-md-7">Border</div>
+              <div class="col-md-2"><input type="color" value="#ffffff" id="primaryButtonBorder"></div>
+            </div>
+            <h4>Info Button</h4>
+            <div class="row">
+              <div class="col-md-7">Background</div>
+              <div class="col-md-2"><input type="color" value="#ffffff" id="infoButtonBackground"></div>
+            </div>
+            <div class="row">
+              <div class="col-md-7">Text</div>
+              <div class="col-md-2"><input type="color" value="#ffffff" id="infoButtonTextColor"></div>
+            </div>
+            <div class="row">
+              <div class="col-md-7">Border</div>
+              <div class="col-md-2"><input type="color" value="#ffffff" id="infoButtonBorder"></div>
+            </div>
+          </div>
+          <div class="col-md-7">
+
+            <div class="row">
+              <div class="col-lg-3">
+                <button type="button" class="btn btn-default">
+                  <span class="glyphicon glyphicon-save-file"></span>
+                  Save
+                </button>
+                <button type="button" class="btn btn-default">
+                  <span class="glyphicon glyphicon-trash"></span>
+                  Delete
+                </button>
+              </div>
+
+              <div class="col-md-3">
+                <div class="btn-group" role="group" aria-label="...">
+                  <button type="button" class="btn btn-default">Left</button>
+                  <button type="button" class="btn btn-default">Middle</button>
+                  <button type="button" class="btn btn-default">Right</button>
+                </div>
+              </div>
+
+              <div class="col-md-5">
+                <button type="button" class="btn btn-default">Default</button>
+                <button type="button" class="btn btn-primary">Primary</button>
+                <button type="button" class="btn btn-info">Info</button>
+                <button type="button" class="btn btn-warning">Warning</button>
+                <button type="button" class="btn btn-danger">Danger</button>
+              </div>
+            </div>
+
+            <br/>
+
+            <div class="row">
+              <div class="col-md-3">
+                <div class="btn-group">
+                  <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown"
+                          aria-haspopup="true"
+                          aria-expanded="false">
+                    Action <span class="caret"></span>
+                  </button>
+                  <ul class="dropdown-menu">
+                    <li><a href="#">Action</a></li>
+                    <li><a href="#">Another action</a></li>
+                    <li><a href="#">Something else here</a></li>
+                    <li role="separator" class="divider"></li>
+                    <li><a href="#">Separated link</a></li>
+                  </ul>
+                </div>
+                <div class="btn-group dropup">
+                  <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown"
+                          aria-haspopup="true"
+                          aria-expanded="false">
+                    Dropup <span class="caret"></span>
+                    <span class="sr-only">Toggle Dropdown</span>
+                  </button>
+                  <ul class="dropdown-menu">
+                    <li><a href="#">Action</a></li>
+                    <li><a href="#">Another action</a></li>
+                    <li><a href="#">Something else here</a></li>
+                    <li role="separator" class="divider"></li>
+                    <li><a href="#">Separated link</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="panel panel-default">
+        <div class="panel-heading">Labels</div>
+        <div class="panel-body">
+          <div class="row">
+            <div class="col-md-4">
+
+              <span class="label label-default">Default</span>
+              <span class="label label-primary">Primary</span>
+              <span class="label label-success">Success</span>
+              <span class="label label-info">Info</span>
+              <span class="label label-warning">Warning</span>
+              <span class="label label-danger">Danger</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="panel panel-default">
+        <div class="panel-heading">Badges</div>
+        <div class="panel-body">
+          <div class="row">
+            <div class="col-md-4">
+              <a href="#">Inbox <span class="badge">42</span></a>
+
+              <button class="btn btn-primary" type="button">
+                Messages <span class="badge">4</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="panel panel-default">
+        <div class="panel-heading">Headers</div>
+        <div class="panel-body">
+          <div class="row">
+            <div class="col-md-12"><h1>H1 Header</h1></div>
+          </div>
+          <div class="row">
+            <div class="col-md-12"><h2>H2 Header</h2></div>
+          </div>
+          <div class="row">
+            <div class="col-md-12"><h3>H3 Header</h3></div>
+          </div>
+          <div class="row">
+            <div class="col-md-12"><h4>H4 Header</h4></div>
+          </div>
+          <div class="row">
+            <div class="col-md-12"><h5>H5 Header</h5></div>
+          </div>
+          <div class="row">
+            <div class="col-md-12"><h6>H6 Header</h6></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+<script src="../js/main.js"></script>
+</html>
