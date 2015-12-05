@@ -35,7 +35,6 @@ exports.updateSession = function(ip, session, cb) {
     } else {
 
       // Update the old one
-      console.log(doc);
       doc.path = session.path;
       doc.save(cb);
     }
