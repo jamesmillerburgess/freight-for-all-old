@@ -41,7 +41,11 @@ app.all('/*', function(req, res, next) {
 });
 
 // 3) Serve static content
-app.use('/', express.static('./client/'));
+app.use('/', express.static('./src/'));
+app.use('/jquery/', express.static('./node_modules/jquery/dist'));
+app.use('/angular2/', express.static('./node_modules/angular2/bundles/'));
+app.use('/bootstrap/', express.static('./node_modules/bootstrap/dist'));
+app.use('/systemjs/', express.static('./node_modules/systemjs/dist'));
 
 // Start app
 app.listen(app.get('port'), function() {
