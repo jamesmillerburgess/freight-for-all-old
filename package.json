@@ -4,15 +4,23 @@
   "description": "A sample Node.js app using Express 4",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js",
-    "test": "vows test/main.js"
+    "tsc": "tsc -p src -w",
+    "test": "vows test/main.js",
+    "_comment_start": "live-server --open=src",
+    "start": "node index.js"
   },
   "dependencies": {
+    "angular2": "2.0.0-alpha.44",
+    "bootstrap": "3.x",
     "express": "4.13.3",
     "express-session": "1.x",
     "mongoose": "4.x",
-    "vows": "0.8.1",
-    "bootstrap": "3.x"
+    "systemjs": "0.19.2",
+    "vows": "0.8.1"
+  },
+  "devDependencies": {
+    "live-server": "^0.8.2",
+    "typescript": "^1.7.3"
   },
   "engines": {
     "node": "4.1.x"

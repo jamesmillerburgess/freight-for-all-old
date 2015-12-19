@@ -8,11 +8,13 @@ var models = {
 // Connect based on database
 // TODO: Staging database
 exports.connect = function(env, cb) {
+  var url = 'mongodb://jburgess:admin@ds057254.mongolab.com:57254/heroku_3zthx5rr';
   if (env === 'development') {
-    mongoose.connect('mongodb://localhost:27017/test', cb);
-  } else {
-    mongoose.connect('mongodb://jburgess:admin@ds057254.mongolab.com:57254/heroku_3zthx5rr', cb);
+    url = 'mongodb://localhost:27017/test';
+  } if (env === 'staging') {
+    url = '??';
   }
+  mongoose.connect(url, cb);
 };
 
 /**
