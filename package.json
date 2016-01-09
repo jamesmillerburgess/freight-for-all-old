@@ -4,7 +4,7 @@
   "description": "A sample Node.js app using Express 4",
   "main": "index.js",
   "scripts": {
-    "tsc": "tsc -p src -w",
+    "tsc": "tsc -p src/app/js -w",
     "test": "vows test/main.js",
     "_comment_start": "live-server --open=src",
     "start": "node index.js"
@@ -14,7 +14,11 @@
     "bootstrap": "3.x",
     "express": "4.13.3",
     "express-session": "1.x",
+    "jquery": "2.x",
     "mongoose": "4.x",
+    "passport": "^0.3.2",
+    "passport-local": "^1.0.0",
+    "passport-local-mongoose": "^3.1.0",
     "systemjs": "0.19.2",
     "vows": "0.8.1"
   },

@@ -1,14 +1,20 @@
 var express = require('express');
 var session = require('express-session');
+var app = express();
 
 // Set environment variables
-var app = express();
 app.set('port', (process.env.PORT || 5000));
 app.set('env', (process.env.NODE_ENV = process.env.NODE_ENV || 'development'));
 
 // Connect to database
-var db = require('./server/db');
+var db = require('./server/db.js');
 db.connect(app.get('env'));
+
+var routes = require('./routes.js');
+
+
+
+
 
 // Set up sessions
 app.use(session({
@@ -21,9 +27,6 @@ app.use(session({
 /**
  * Routing
  **/
-
-var auth = require('./server/routes/auth');
-app.use('/auth', auth);
 
 // 1) Log visit
 app.all('/*', function (req, res, next) {

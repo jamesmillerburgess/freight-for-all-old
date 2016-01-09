@@ -7,7 +7,7 @@ app.set('port', (process.env.PORT || 5000));
 app.set('env', (process.env.NODE_ENV = process.env.NODE_ENV || 'development'));
 
 // Connect to database
-var db = require('./server/db');
+var db = require('./server/db.js');
 db.connect(app.get('env'));
 
 // Set up sessions
@@ -21,9 +21,6 @@ app.use(session({
 /**
  * Routing
  **/
-
-var auth = require('./server/routes/auth');
-app.use('/auth', auth);
 
 // 1) Log visit
 app.all('/*', function (req, res, next) {
@@ -77,5 +74,3 @@ passport.use(new LocalStrategy(
 app.listen(app.get('port'), function () {
   console.log('Node app is running on port', app.get('port'));
 });
-
-

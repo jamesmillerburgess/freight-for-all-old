@@ -1,9 +1,16 @@
 var mongoose = require('mongoose');
+var passport = require('passport');
 
 // Load models
 var models = {
-    session: require('./schemas/session.js').model
+  session: require('./schemas/session.js').model,
+  user: require('./schemas/user.js').model
 };
+
+passport.use(models.user.createStrategy());
+
+passport.serializeUser(models.user.serializeUser());
+passport.deserializeUser(models.user.deserializeUser());
 
 // Connect based on database
 // TODO: Staging database
@@ -23,6 +30,7 @@ exports.connect = function(env, cb) {
  * @param session
  * @param cb
  */
+
 exports.updateSession = function(ip, session, cb) {
   var conditions = { id: session.id };
   models.session.findOne(conditions, function(err, doc) {
